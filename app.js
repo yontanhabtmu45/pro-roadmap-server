@@ -17,9 +17,14 @@ const cors = require('cors');
 const router = require("./Routes");
 // setup the CORS  option to allow requests from our front-end
 const corsOptions = {
-  origin: process.env.FRONTEND_URL,
+  origin: [
+    "http://localhost:5173",
+    "https://pro-roadmap.vercel.app"
+  ],
+  credentials: true,
   optionsSuccessStatus: 200
-  };
+};
+
 
 // initialize express app
 const app = express();
